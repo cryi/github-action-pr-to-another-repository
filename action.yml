@@ -38,6 +38,12 @@ inputs:
       to "main"
     default: main
     required: false
+  source-branch:
+    description: >-
+      [Optional] set source branch name of the destination repository. Defaults
+      to "main"
+    default: main
+    required: false
   commit-message:
     description: >-
       [Optional] commit message for the output repository. ORIGIN_COMMIT is
@@ -64,6 +70,7 @@ runs:
     - '${{ inputs.target-branch }}'
     - '${{ inputs.commit-message }}'
     - '${{ inputs.target-directory }}'
+    - '${{ inputs.source-branch }}'
 branding:
   icon: git-commit
   color: green
